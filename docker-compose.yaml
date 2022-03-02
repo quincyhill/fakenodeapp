@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: 'fakenodeapp'
+    # Build from my local file
+    build:
+      # This change from . to ./ seemed to fix the issue?
+      context: ./
+      dockerfile: Dockerfile
+    # Map current port 3000 to container 3000
+    # no volumes needed
+    ports:
+      - '3000:3000'
